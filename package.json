@@ -1,20 +1,23 @@
 {
-  "name": "simple-rest",
+  "name": "node-express-api-ts",
+  "description": "Simple api sample in Node",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "nodemon --watch 'src/**' --ext 'ts,json' --exec 'npm run build && npm run start'",
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Google LLC",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
   "devDependencies": {
     "@types/express": "^5.0.0",
-    "@types/node": "^22.7.9",
-    "tsx": "^4.19.1",
-    "typescript": "^5.6.3"
-  },
-  "dependencies": {
-    "express": "^4.21.1"
+    "@types/node": "^20.12.12",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
   }
 }
